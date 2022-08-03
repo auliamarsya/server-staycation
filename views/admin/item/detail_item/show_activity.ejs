@@ -48,7 +48,7 @@
                                         <td><%= activity[key].name %></td>
                                         <td><%= activity[key].type %></td>
                                         <td>
-                                            <img src="http://localhost:3000/<%= activity[key].imageUrl %>" alt="image<% parseInt(key) + 1 %>" style="height: 50px; width: auto;">
+                                            <img src="https://iam-admin-staycation.herokuapp.com/<%= activity[key].imageUrl %>" alt="image<% parseInt(key) + 1 %>" style="height: 50px; width: auto;">
                                         </td>
                                         <td>
                                             <form action="/admin/item/activity/<%= itemId %>/<%= activity[key]._id %>?_method=DELETE" method="POST">

@@ -48,7 +48,7 @@
                                         <td><%= feature[key].name %></td>
                                         <td><%= feature[key].qty %></td>
                                         <td>
-                                            <img src="http://localhost:3000/<%= feature[key].imageUrl %>" alt="image<% parseInt(key) + 1 %>" style="height: 30px;">
+                                            <img src="https://iam-admin-staycation.herokuapp.com/<%= feature[key].imageUrl %>" alt="image<% parseInt(key) + 1 %>" style="height: 30px;">
                                         </td>
                                         <td>
                                             <form action="/admin/item/feature/<%= itemId %>/<%= feature[key]._id %>?_method=DELETE" method="POST">

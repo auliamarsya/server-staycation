@@ -27,7 +27,7 @@
                             <td><%= bank[key].nomorRekening %></td>
                             <td><%= bank[key].name %></td>
                             <td>
-                                <img src="http://localhost:3000/<%= bank[key].imageUrl %>" alt="<%= bank[key].nameBank %>" height="36px">
+                                <img src="https://iam-admin-staycation.herokuapp.com/<%= bank[key].imageUrl %>" alt="<%= bank[key].nameBank %>" height="36px">
                             </td>
                             <td>
                                 <form action="/admin/bank/<%= bank[key].id %>?_method=DELETE" method="POST">
