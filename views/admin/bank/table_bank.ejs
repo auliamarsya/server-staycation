@@ -1,0 +1,45 @@
+<!-- DataTales -->
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bankModal">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Bank Name</th>
+                        <th>Rek. Number</th>
+                        <th>Name</th>
+                        <th>Image</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% Object.keys(bank).forEach(key => { %>
+                        <tr>
+                            <td><%= parseInt(key) + 1 %></td>
+                            <td><%= bank[key].nameBank %></td>
+                            <td><%= bank[key].nomorRekening %></td>
+                            <td><%= bank[key].name %></td>
+                            <td>
+                                <img src="http://localhost:3000/<%= bank[key].imageUrl %>" alt="<%= bank[key].nameBank %>" height="36px">
+                            </td>
+                            <td>
+                                <form action="/admin/bank/<%= bank[key].id %>?_method=DELETE" method="POST">
+                                    <a type="button" class="btn btn-warning btn-circle btn-sm btn-upload" data-id="<%= bank[key]._id %>" data-namebank="<%= bank[key].nameBank %>" data-nomorrekening="<%= bank[key].nomorRekening %>" data-name="<%= bank[key].name %>"><i class="fas fa-edit"></i></a>
+                                    <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+                                </form>
+                            </td>
+                        </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- End DataTables -->

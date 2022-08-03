@@ -1,0 +1,46 @@
+<div class="tab-pane fade show active" id="show-item" role="tabpanel" aria-labelledby="show-tab">
+
+    <!-- DataTales -->
+    <div class="card shadow mb-4 mt-2">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Item Table</h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Title</th>
+                            <th>Price</th>
+                            <th>Country</th>
+                            <th>City</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% Object.keys(item).forEach(key => { %>
+                            <tr>
+                                <td><%= parseInt(key) + 1 %></td>
+                                <td><%= item[key].title %></td>
+                                <td>$ <%= item[key].price %></td>
+                                <td><%= item[key].country %></td>
+                                <td><%= item[key].city %></td>
+                                <td>
+                                    <form action="/admin/item/<%= item[key].id %>?_method=DELETE" method="POST">
+                                        <a href="/admin/item/show-image/<%= item[key].id %>" class="btn btn-info btn-circle btn-sm"><i class="fas fa-image"></i></a>
+                                        <a href="/admin/item/edit-image/<%= item[key].id %>" class="btn btn-warning btn-circle btn-sm"><i class="fas fa-edit"></i></a>
+                                        <button type="submit" class="btn btn-danger btn-circle btn-sm"><i class="fas fa-trash"></i></button>
+                                        <a href="/admin/item/show-detail-item/<%= item[key].id %>" class="btn btn-success btn-circle btn-sm"><i class="fas fa-plus"></i></a>
+                                    </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <!-- End DataTables -->
+
+</div>
