@@ -6,6 +6,7 @@ var logger = require('morgan');
 const methodOverride = require('method-override');
 const session = require('express-session');
 const flash = require('connect-flash');
+const cors = require('cors')
 // import mongoose
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://auliamarsya:auliamarsya@cluster0.evvrl.mongodb.net/db_staycation?retryWrites=true&w=majority');
@@ -18,6 +19,8 @@ const adminRouter = require('./routes/admin');
 const apiRouter = require('./routes/api');
 
 var app = express();
+
+app.use(cors())
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -33,6 +36,7 @@ app.use(session({
   saveUninitialized: true,
   cookie: { maxAge: 60000 }
 }));
+
 
 //connect flash
 app.use(flash());
