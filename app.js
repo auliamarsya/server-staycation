@@ -10,6 +10,7 @@ const cors = require('cors')
 // import mongoose
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://auliamarsya:auliamarsya@cluster0.evvrl.mongodb.net/db_staycation?retryWrites=true&w=majority');
+// mongoose.connect('mongodb://localhost:27017/db_staycation');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -34,7 +35,7 @@ app.use(session({
   secret: 'keyboard cat',
   resave: false,
   saveUninitialized: true,
-  cookie: { maxAge: 60000 }
+  cookie: { maxAge: 6000000 }
 }));
 
 
